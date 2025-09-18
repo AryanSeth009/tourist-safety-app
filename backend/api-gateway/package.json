@@ -30,10 +30,13 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2",
     "winston": "^3.17.0"
+<<<<<<< HEAD
   },
   "devDependencies": {
     "@types/compression": "^1.8.1",
     "@types/express": "^5.0.3",
     "@types/morgan": "^1.9.10"
+=======
+>>>>>>> e9e2b4d04e0172ab4568bfcddf0a5ee1c9ed73ab
   }
 }

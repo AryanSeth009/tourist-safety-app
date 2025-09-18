@@ -23,7 +23,11 @@ async function initializeFabric() {
     console.log("Hyperledger Fabric gateway and contract initialized for Location Service.")
   } catch (error) {
     console.error(`Failed to initialize Fabric for Location Service: ${error}`)
+<<<<<<< HEAD
     // Do not exit; allow service to run in degraded mode for local dev.
+=======
+    process.exit(1)
+>>>>>>> e9e2b4d04e0172ab4568bfcddf0a5ee1c9ed73ab
   }
 }
 
