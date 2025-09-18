@@ -1,0 +1,18 @@
+{
+  "emergency": {
+    "panic_button_activated": "Emergency button activated. Help is being dispatched.",
+    "geofence_violation": "You have entered a restricted area.",
+    "prolonged_inactivity": "Prolonged inactivity detected.",
+    "route_deviation": "You have deviated from your planned route."
+  },
+  "safety": {
+    "high_risk_area": "High-risk area",
+    "safety_score_updated": "Safety score updated: {{score}}",
+    "location_shared": "Your location has been shared with emergency contacts"
+  },
+  "tourist_id": {
+    "created_successfully": "Tourist ID created successfully",
+    "verification_required": "KYC verification required",
+    "expired": "Tourist ID has expired"
+  }
+}

@@ -1,0 +1,58 @@
+Organizations:
+  - &TourismDept
+    Name: TourismDeptMSP
+    ID: TourismDeptMSP
+    MSPDir: organizations/peerOrganizations/tourism.example.com/msp
+    Policies: &TourismDeptPolicies
+      Readers:
+        Type: Signature
+        Rule: "OR('TourismDeptMSP.member')"
+      Writers:
+        Type: Signature  
+        Rule: "OR('TourismDeptMSP.member')"
+      Admins:
+        Type: Signature
+        Rule: "OR('TourismDeptMSP.admin')"
+    AnchorPeers:
+      - Host: peer0.tourism.example.com
+        Port: 7051
+
+  - &Police
+    Name: PoliceMSP
+    ID: PoliceMSP
+    MSPDir: organizations/peerOrganizations/police.example.com/msp
+    Policies: &PolicePolicies
+      Readers:
+        Type: Signature
+        Rule: "OR('PoliceMSP.member')"
+      Writers:
+        Type: Signature
+        Rule: "OR('PoliceMSP.member')"
+      Admins:
+        Type: Signature
+        Rule: "OR('PoliceMSP.admin')"
+    AnchorPeers:
+      - Host: peer0.police.example.com
+        Port: 9051
+
+Capabilities:
+  Channel: &ChannelCapabilities
+    V2_0: true
+  Orderer: &OrdererCapabilities
+    V2_0: true
+  Application: &ApplicationCapabilities
+    V2_0: true
+
+Channel: &ChannelDefaults
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+  Capabilities:
+    <<: *ChannelCapabilities
