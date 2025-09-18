@@ -71,7 +71,7 @@ The mobile application is a React Native (Expo) project that serves as the prima
 *   **Mobile-Specific Features**: Location services (background tracking, geofencing), push notifications, haptic feedback, biometric authentication.
 *   **Communication**: Interacts with the backend API Gateway via HTTP requests and real-time Socket.IO connections.
 
-
+    
 ## 1. Project Architecture
 
 The system follows a **microservices architecture** with a clear separation of concerns, communicating via an API Gateway and leveraging a Hyperledger Fabric blockchain for critical data.
