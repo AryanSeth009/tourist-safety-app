@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # Hyperledger Fabric Network
+  fabric-orderer:
+    build: ../hyperledger-network/docker/orderer
+    networks: [tourist-safety]
+    
+  fabric-peer-tourism:
+    build: ../hyperledger-network/docker/peer-tourism
+    networks: [tourist-safety]
+    
+  fabric-peer-police:
+    build: ../hyperledger-network/docker/peer-police  
+    networks: [tourist-safety]
+    
+  # API Gateway
+  api-gateway:
+    build: ../api-gateway
+    ports: ["3000:3000"]
+    environment:
+      - FABRIC_NETWORK_PATH=/fabric-network
+      - DATABASE_URL=postgresql://user:pass@postgres:5432/touristsafety
+    networks: [tourist-safety]
+    
+  # Microservices
+  tourist-id-service:
+    build: ../services/tourist-id-service
+    networks: [tourist-safety]
+    
+  emergency-service:
+    build: ../services/emergency-service  
+    networks: [tourist-safety]
+    
+  ai-anomaly-service:
+    build: ../services/ai-anomaly-service
+    ports: ["8000:8000"]
+    networks: [tourist-safety]
+    
+  # Dashboard
+  tourism-dashboard:
+    build: ../dashboard/tourism-admin-dashboard
+    ports: ["3001:3000"]
+    networks: [tourist-safety]
+    
+  # Databases
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: touristsafety
+      POSTGRES_USER: user  
+      POSTGRES_PASSWORD: password
+    networks: [tourist-safety]
+    
+  redis:
+    image: redis:7
+    networks: [tourist-safety]
+
+networks:
+  tourist-safety:
+    driver: bridge

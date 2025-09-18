@@ -1,0 +1,5 @@
+fastapi==0.111.0
+pydantic==2.8.2
+numpy==1.26.4
+tensorflow==2.16.2 # Or your specific TensorFlow version
+uvicorn==0.30.1
