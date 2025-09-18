@@ -1,0 +1,18 @@
+{
+  "emergency": {
+    "panic_button_activated": "आपातकालीन बटन सक्रिय किया गया। सहायता भेजी जा रही है।",
+    "geofence_violation": "आप एक प्रतिबंधित क्षेत्र में प्रवेश कर गए हैं।",
+    "prolonged_inactivity": "लंबे समय तक निष्क्रियता का पता चला।",
+    "route_deviation": "आप अपने नियोजित मार्ग से भटक गए हैं।"
+  },
+  "safety": {
+    "high_risk_area": "उच्च जोखिम वाला क्षेत्र",
+    "safety_score_updated": "सुरक्षा स्कोर अपडेट किया गया: {{score}}",
+    "location_shared": "आपका स्थान आपातकालीन संपर्कों के साथ साझा किया गया है"
+  },
+  "tourist_id": {
+    "created_successfully": "पर्यटक पहचान सफलतापूर्वक बनाई गई",
+    "verification_required": "केवाईसी सत्यापन आवश्यक है",
+    "expired": "पर्यटक पहचान समाप्त हो गई है"
+  }
+}
