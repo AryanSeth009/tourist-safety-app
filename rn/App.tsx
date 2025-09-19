@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler'
+import { StatusBar } from 'expo-status-bar'
+import { NavigationContainer, DefaultTheme, Theme } from '@react-navigation/native'
+import { StyleSheet, View } from 'react-native'
+import { AppNavigator } from './src/navigation/AppNavigator'
+
+const navTheme: Theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: '#0b1220',
+    card: '#0f172a',
+    text: '#e2e8f0',
+    border: '#1f2937',
+    primary: '#38bdf8'
+  }
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Suraksha Setu</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer theme={navTheme}>
+      <View style={styles.container}>
+        <AppNavigator />
+        <StatusBar style="light" />
+      </View>
+    </NavigationContainer>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    backgroundColor: '#0b1220'
+  }
+})
