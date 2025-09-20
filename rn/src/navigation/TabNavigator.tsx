@@ -1,18 +1,19 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { HomeScreen } from '../screens/HomeScreen'
-import { DashboardScreen } from '../screens/DashboardScreen'
-import { ItineraryScreen } from '../screens/ItineraryScreen'
-import { AlertsScreen } from '../screens/AlertsScreen'
-import { ProfileScreen } from '../screens/ProfileScreen'
+import { HomeScreen } from '../screens/main/HomeScreen'
+import { DashboardScreen } from '../screens/main/DashboardScreen'
+import { ItineraryScreen } from '../screens/main/ItineraryScreen'
+import { AlertsScreen } from '../screens/main/AlertsScreen'
+import { ProfileSetup } from '../screens/auth/ProfileSetup'
 import { Feather } from '@expo/vector-icons'
+import { View, StyleSheet } from 'react-native'
 
 export type MainTabsParamList = {
 	Home: undefined
 	Dashboard: undefined
 	Itinerary: undefined
 	Alerts: undefined
-	Profile: undefined
+	ProfileSetup: undefined
 }
 
 const Tab = createBottomTabNavigator<MainTabsParamList>()
@@ -22,7 +23,7 @@ export function TabNavigator() {
 		<Tab.Navigator
 			screenOptions={({ route }) => ({
 				headerShown: false,
-				tabBarStyle: { backgroundColor: '#0f172a', borderTopColor: '#1f2937' },
+				tabBarStyle: styles.tabBarStyle,
 				tabBarActiveTintColor: '#38bdf8',
 				tabBarInactiveTintColor: '#94a3b8',
 				tabBarIcon: ({ color, size }) => {
@@ -41,9 +42,17 @@ export function TabNavigator() {
 			<Tab.Screen name="Dashboard" component={DashboardScreen} />
 			<Tab.Screen name="Itinerary" component={ItineraryScreen} />
 			<Tab.Screen name="Alerts" component={AlertsScreen} />
-			<Tab.Screen name="Profile" component={ProfileScreen} />
+			<Tab.Screen name="Profile" component={ProfileSetup} />
 		</Tab.Navigator>
 	)
 }
+
+const styles = StyleSheet.create({
+  tabBarStyle: {
+    backgroundColor: '#0f172a',
+    borderTopWidth: 1,
+    borderTopColor: '#1f2937',
+  },
+});
 
 

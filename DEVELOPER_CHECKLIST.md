@@ -15,7 +15,6 @@ This project is a **Smart Tourist Safety Monitoring & Incident Response System**
 
 ---
 
-HEAD
 ## 0. Quickstart (TL;DR)
 
 Use separate terminals for each step. On Windows PowerShell, use `;` instead of `&&` to chain commands.
@@ -71,20 +70,6 @@ The mobile application is a React Native (Expo) project that serves as the prima
 *   **Mobile-Specific Features**: Location services (background tracking, geofencing), push notifications, haptic feedback, biometric authentication.
 *   **Communication**: Interacts with the backend API Gateway via HTTP requests and real-time Socket.IO connections.
 
-    
-## 1. Project Architecture
-
-The system follows a **microservices architecture** with a clear separation of concerns, communicating via an API Gateway and leveraging a Hyperledger Fabric blockchain for critical data.
-
-### 1.1 Frontend (React Native Mobile Application - `rn/`)
-
-The mobile application is a React Native (Expo) project that serves as the primary interface for tourists. It's designed for real-time safety monitoring and incident reporting.
-
-*   **User Interface**: Interactive map, panic button, safety score, alerts, profile, itinerary management.
-*   **Mobile-Specific Features**: Location services (background tracking, geofencing), push notifications, haptic feedback, biometric authentication.
-*   **Communication**: Interacts with the backend API Gateway via HTTP requests and real-time Socket.IO connections.
-
-e9e2b4d04e0172ab4568bfcddf0a5ee1c9ed73ab
 ### 1.2 Backend (Microservices & Hyperledger Fabric - `backend/`)
 
 The backend is composed of several independent microservices, an API Gateway, and a Hyperledger Fabric blockchain network.
@@ -325,7 +310,6 @@ Ensure you have the following installed:
         npm run dev
         ```
         (This will watch for `.ts` changes and restart the server)
-<<<<<<< HEAD
 
 ### 4.4 Run Everything (Quick Commands)
 
@@ -385,8 +369,7 @@ Tip: If ports are in use, the tools will prompt to use the next free port.
   - Install in service dir: `npm i prom-client @types/prom-client -D`
 - Fabric JSON not found (`connection-tourism.json`)
   - Follow 4.3 to set up Fabric; until then, services run in degraded mode.
-=======
->>>>>>> e9e2b4d04e0172ab4568bfcddf0a5ee1c9ed73ab
+
 4.  **Tourist ID Service Setup (`backend/services/tourist-id-service/`)**:
     *   **Navigate to the service directory**:
         ```bash
@@ -539,5 +522,5 @@ The project is designed for containerized deployment using Docker and Kubernetes
 ---
 
 **Last Updated**: September 2025
-**Version**: 1.0 (Post React Native & Backend Migration)
+**Version**: 1.1 (Post React Native & Backend Migration)
 **Maintainer**: Development Team
